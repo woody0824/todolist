@@ -1,0 +1,25 @@
+%h1 Listing events
+%table
+  %thead
+    %tr
+      %th 件名
+      %th 文章
+      %th 初め
+      %th 終わり
+      %th
+      %th
+      %th
+
+  %tbody
+    - @events.each do |event|
+      %tr
+        %td= event.title
+        %td= event.description
+        %td= event.start_date.strftime("%Y-%m-%d %H:%M")
+        %td= event.end_date.strftime("%Y-%m-%d %H:%M")
+        %td= link_to 'Show', event
+        %td= link_to 'Edit', edit_event_path(event)
+        %td= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
+%br
+= link_to 'New Event', new_event_path
+#calendar

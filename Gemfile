@@ -65,3 +65,6 @@ gem 'haml-rails'
 gem 'erb2haml'
 
 gem 'pry-rails'
+gem 'jquery-rails', '4.3.3'
+gem 'fullcalendar-rails'
+gem 'momentjs-rails'
