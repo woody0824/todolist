@@ -1,11 +1,12 @@
-%h1 Listing events
+%h1 やる事リスト一覧
 %table
   %thead
     %tr
+      %th 名前
       %th 件名
-      %th 文章
-      %th 初め
-      %th 終わり
+      %th やる事
+      %th 開始
+      %th 完了
       %th
       %th
       %th
@@ -13,13 +14,13 @@
   %tbody
     - @events.each do |event|
       %tr
+        %td= event.user.nickname
         %td= event.title
         %td= event.description
         %td= event.start_date.strftime("%Y-%m-%d %H:%M")
         %td= event.end_date.strftime("%Y-%m-%d %H:%M")
-        %td= link_to 'Show', event
-        %td= link_to 'Edit', edit_event_path(event)
-        %td= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to '詳細', event
+        %td= link_to '編集', edit_event_path(event)
+        %td= link_to '削除', event, method: :delete, data: { confirm: 'Are you sure?' }
 %br
-= link_to 'New Event', new_event_path
 #calendar

@@ -1,5 +1,5 @@
 .postTitle
   = @user.nickname
-  さんの投稿一覧
+  さんのやる事一覧
 - @events.each do |event|
   = render partial: "events/event", locals: { event: event }
