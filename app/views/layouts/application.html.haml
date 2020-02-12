@@ -10,7 +10,7 @@
   %body
     %header.header
       .header__title
-        = link_to "やる事リスト", root_path, class: "header__title--text"
+        = link_to "みんなのやる事リスト", root_path, class: "header__title--text"
       .header__right
         - if user_signed_in?
           = link_to current_user.nickname, user_path(current_user), class: "header__right--btn"
